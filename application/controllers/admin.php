@@ -327,6 +327,7 @@ class Admin extends CI_Controller
         $this->load->model('m_freegames');
         $where = array('id_game' => $id_game);
         $data['game'] = $this->m_freegames->free_games_update($where, 'playgames')->result();
+       // print_r($data); exit();
         $this->load->view('admin/free_games_update', $data);
     }
 
@@ -343,7 +344,6 @@ class Admin extends CI_Controller
             'nama_game' => $nama_games,
             'deskripsi_game' => $deskripsi_games,
             'kategori' => $kategori,
-
         );
 
         $config['allowed_types'] = 'jpg|png|gif|jfif';
